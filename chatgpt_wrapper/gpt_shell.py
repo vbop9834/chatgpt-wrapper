@@ -15,7 +15,7 @@ is_windows = platform.system() == "Windows"
 if is_windows:
     import pyreadline3  # noqa: F401
 else:
-    import gnureadline
+    import pyreadline3
 
 
 class GPTShell(cmd.Cmd):
@@ -166,8 +166,8 @@ class GPTShell(cmd.Cmd):
         ctrl_sequence = "^z" if is_windows else "^d"
         self._print_markdown(f"* Reading prompt, hit {ctrl_sequence} when done, or write line with /end.")
 
-        if not is_windows:
-            readline.set_auto_history(False)
+        #if not is_windows:
+        #    readline.set_auto_history(False)
 
         prompt = ""
         while True:
@@ -181,9 +181,9 @@ class GPTShell(cmd.Cmd):
                 break
             prompt += line + "\n"
 
-        if not is_windows:
-            readline.set_auto_history(True)
-            readline.add_history(prompt)
+        #if not is_windows:
+        #    readline.set_auto_history(True)
+        #    readline.add_history(prompt)
 
         self.default(prompt)
 
