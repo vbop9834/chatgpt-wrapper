@@ -1,4 +1,4 @@
 playwright
-readline; platform_system=="Linux"
+gnureadline; platform_system=="Linux"
 pyreadline3; platform_system=="Windows"
 rich

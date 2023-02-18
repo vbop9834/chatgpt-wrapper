@@ -15,7 +15,7 @@ is_windows = platform.system() == "Windows"
 if is_windows:
     import pyreadline3  # noqa: F401
 else:
-    import readline
+    import gnureadline
 
 
 class GPTShell(cmd.Cmd):
